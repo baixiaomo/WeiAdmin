@@ -13,7 +13,7 @@ public class IndexController {
     public String index(){
         return "view/index";
     }
-    @RequestMapping("/starter")
+    @RequestMapping("/admin")
     public String start(){
         return "starter";
     }
