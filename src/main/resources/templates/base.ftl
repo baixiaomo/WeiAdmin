@@ -209,7 +209,7 @@
     </header>
 </#macro>
 <!--左导航栏-->
-<#macro leftSideBar>
+<#macro leftSideBar activeButton>
 <aside class="main-sidebar">
 
     <!-- sidebar: style can be found in sidebar.less -->
@@ -243,16 +243,16 @@
         <ul class="sidebar-menu" data-widget="tree">
             <!--<li class="header">HEADER</li>-->
             <!-- Optionally, you can add icons to the links -->
-            <li ><a href="#"><i class="fa fa-tv"></i> <span>工作台</span></a></li>
-            <li class="treeview">
+            <li <#if activeButton == 'workbench'>class="active"</#if>><a href="#"><i class="fa fa-tv"></i> <span>工作台</span></a></li>
+            <li class="treeview <#if activeButton?contains('userManager_')>active menu-open</#if>">
                 <a href="#"><i class="fa fa-user-o"></i><span>用户管理</span>
                     <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li ><a href="#"><i class="fa fa-circle-o"></i>用户</a></li>
-                    <li ><a href="#"><i class="fa fa-circle-o"></i>组</a></li>
+                    <li <#if activeButton =='userManager_user'>class="active"</#if>><a href="#"><i class="fa fa-circle-o"></i>用户</a></li>
+                    <li <#if activeButton =='userManager_group'>class="active"</#if>><a href="#"><i class="fa fa-circle-o"></i>组</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -264,7 +264,6 @@
                 <ul class="treeview-menu">
                     <li><a href="#"><i class="fa fa-circle-o"></i>数据字典</a></li>
                     <li><a href="#"><i class="fa fa-circle-o"></i>数据统计</a></li>
-                    <!--<li><a href="#">Link in level 2</a></li>-->
                 </ul>
             </li>
             <li class="treeview">
@@ -399,11 +398,11 @@
 </footer>
 </#macro>
 <!--模板1-->
-<#macro model1>
+<#macro model1 activeButton>
     <!-- Main Header -->
     <@header></@header>
     <!-- Left side column. contains the logo and sidebar -->
-    <@leftSideBar></@leftSideBar>
+    <@leftSideBar activeButton=activeButton></@leftSideBar>
     <#nested >
     <!-- Main Footer -->
     <@footer></@footer>

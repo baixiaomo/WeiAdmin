@@ -42,7 +42,7 @@ desired effect
   <!-- Left side column. contains the logo and sidebar -->
   <#--<@base.leftSideBar></@base.leftSideBar>-->
   <!-- Content Wrapper. Contains page content -->
-  <@base.model1>
+  <@base.model1 activeButton='workbench'>
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
