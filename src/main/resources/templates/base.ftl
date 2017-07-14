@@ -191,7 +191,7 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">微世界</a>
+                                    <a href="world/world.ftl" class="btn btn-default btn-flat">登陆</a>
                                 </div>
                                 <div class="pull-right">
                                     <a href="#" class="btn btn-default btn-flat">退出</a>
@@ -305,6 +305,12 @@
                     <li><a href="#"><i class="fa fa-circle-o"></i>留言</a></li>
                 </ul>
             </li>
+
+            <li><a href="#"><i class="fa fa-gg"></i> <span>世界</span></a></li>
+            <li><a href="#"><i class="fa fa-gg"></i> <span>无涯</span></a></li>
+            <li><a href="#"><i class="fa fa-gg"></i> <span>流音</span></a></li>
+            <li><a href="#"><i class="fa fa-gg"></i> <span>千古</span></a></li>
+            <li><a href="#"><i class="fa fa-gg"></i> <span>子鱼</span></a></li>
         </ul>
         <!-- /.sidebar-menu -->
     </section>
