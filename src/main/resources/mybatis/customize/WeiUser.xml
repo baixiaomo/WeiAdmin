@@ -17,7 +17,7 @@
     id, username, password, email, role, state, create_time, update_time, creater, updater
   </sql>
 
-  <select id="selectByEmailAndPassword" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="getUserByEmailAndPassword" resultMap="BaseResultMap" parameterType="com.wfdest.dao.entity.WeiUser" >
     select
     <include refid="Base_Column_List" />
     from wei_user

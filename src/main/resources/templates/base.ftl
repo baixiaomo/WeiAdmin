@@ -243,69 +243,70 @@
         <ul class="sidebar-menu" data-widget="tree">
             <!--<li class="header">HEADER</li>-->
             <!-- Optionally, you can add icons to the links -->
-            <li <#if activeButton == 'workbench'>class="active"</#if>><a href="#"><i class="fa fa-tv"></i> <span>工作台</span></a></li>
-            <li class="treeview <#if activeButton?contains('userManager_')>active menu-open</#if>">
-                <a href="#"><i class="fa fa-user-o"></i><span>用户管理</span>
-                    <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li <#if activeButton =='userManager_user'>class="active"</#if>><a href="#"><i class="fa fa-circle-o"></i>用户</a></li>
-                    <li <#if activeButton =='userManager_group'>class="active"</#if>><a href="#"><i class="fa fa-circle-o"></i>组</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#"><i class="fa fa-calculator"></i><span>数据管理</span>
-                    <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i>数据字典</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>数据统计</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#"><i class="fa fa-suitcase"></i> <span>模块管理</span>
-                    <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i>世界</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>无涯</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>千古</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>流音</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>子鱼</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#"><i class="fa fa-file"></i> <span>文件管理</span>
-                    <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i>笔记</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>文章</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>诗词</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>图像</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>音频</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#"><i class="fa fa-tasks"></i> <span>任务管理</span>
-                    <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i>评论</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>留言</a></li>
-                </ul>
-            </li>
-
+            <#if user.state == 1>
+                <li <#if activeButton == 'workbench'>class="active"</#if>><a href="#"><i class="fa fa-tv"></i> <span>工作台</span></a></li>
+                <li class="treeview <#if activeButton?contains('userManager_')>active menu-open</#if>">
+                    <a href="#"><i class="fa fa-user-o"></i><span>用户管理</span>
+                        <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li <#if activeButton =='userManager_user'>class="active"</#if>><a href="#"><i class="fa fa-circle-o"></i>用户</a></li>
+                        <li <#if activeButton =='userManager_group'>class="active"</#if>><a href="#"><i class="fa fa-circle-o"></i>组</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-calculator"></i><span>数据管理</span>
+                        <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i>数据字典</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i>数据统计</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-suitcase"></i> <span>模块管理</span>
+                        <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i>世界</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i>无涯</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i>千古</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i>流音</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i>子鱼</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-file"></i> <span>文件管理</span>
+                        <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i>笔记</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i>文章</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i>诗词</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i>图像</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i>音频</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-tasks"></i> <span>任务管理</span>
+                        <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i>评论</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i>留言</a></li>
+                    </ul>
+                </li>
+            </#if>
             <li><a href="#"><i class="fa fa-gg"></i> <span>世界</span></a></li>
             <li><a href="#"><i class="fa fa-gg"></i> <span>无涯</span></a></li>
             <li><a href="#"><i class="fa fa-gg"></i> <span>流音</span></a></li>

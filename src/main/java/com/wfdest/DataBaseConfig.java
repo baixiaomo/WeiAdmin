@@ -4,6 +4,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.log4j.Logger;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -16,6 +17,7 @@ import javax.sql.DataSource;
  * Created by feiwei on 2017/7/7.
  */
 @Configuration
+@MapperScan(value = {"com.wfdest.dao"})
 public class DataBaseConfig {
     private static Logger LOG = Logger.getLogger(DataBaseConfig.class);
     @Resource
@@ -35,6 +37,7 @@ public class DataBaseConfig {
         dataSource.setPassword(env.getProperty("spring.datasource.password")); // 密码
         return dataSource;
     }
+    @Bean
     public SqlSessionFactory sqlSessionFactory() throws Exception{
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource());

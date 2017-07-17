@@ -93,6 +93,7 @@
             increaseArea: '20%' // optional
         });
     });
+
 </script>
 </body>
 </html>
