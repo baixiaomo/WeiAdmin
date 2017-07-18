@@ -2,6 +2,7 @@
 <html>
 <head>
     <#import "../base.ftl" as base >
+    <#setting classic_compatible=true><!--空值处理-->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>微世界登陆</title>
@@ -27,6 +28,7 @@
 
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -35,8 +37,7 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <!--<p class="login-box-msg">Sign in to start your session</p>-->
-
+        <p class="login-box-msg">${error_message}</p>
         <form action="${springMacroRequestContext.contextPath}/admin" method="post" style="">
             <div class="form-group has-feedback">
                 <input type="email" class="form-control" name="email" placeholder="Email">
@@ -63,16 +64,16 @@
         </form>
 
         <div class="social-auth-links text-center">
-            <p>- OR -</p>
+            <#--<p>- OR -</p>
             <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
                 Facebook</a>
             <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
-                Google+</a>
+                Google+</a>-->
         </div>
         <!-- /.social-auth-links -->
 
-        <a href="#">I forgot my password</a><br>
-        <a href="register.html" class="text-center">Register a new membership</a>
+        <#--<a href="#">I forgot my password</a><br>
+        <a href="register.html" class="text-center">Register a new membership</a>-->
 
     </div>
     <!-- /.login-box-body -->
