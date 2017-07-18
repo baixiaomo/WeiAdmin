@@ -226,6 +226,32 @@
         <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
             <span class="sr-only">Toggle navigation</span>
         </a>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">乾坤 <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">无涯</a></li>
+                <li><a href="#">流音</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">千古 <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">千古一</a></li>
+                        <li><a href="#">千古二</a></li>
+                        <!--<li><a href="#">流音</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>-->
+                    </ul>
+                </li>
+                <li><a href="#">子鱼</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="navbar-search-input" placeholder="搜索">
+                </div>
+            </form>
+        </div>
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">

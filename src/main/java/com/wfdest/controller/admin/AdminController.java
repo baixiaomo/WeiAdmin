@@ -35,7 +35,7 @@ public class AdminController {
         //直接访问web
         if(StringUtils.isEmpty(email) || StringUtils.isEmpty(password)){
             map.addAttribute("error_message", ErrorMessage.LOGGING_WITH_ERROR_PASSWORD);
-            return "/admin/login";
+            return "/admin/admin";
         }
         if(!userService.isAdmin(user)){
             map.addAttribute("error_message", ErrorMessage.LOGGING_WITH_ERROR_PASSWORD);
