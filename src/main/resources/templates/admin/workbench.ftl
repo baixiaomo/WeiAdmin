@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <#import "../base.ftl" as base>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>微世界</title>
+    <title>我的微世界</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!--导入样式-->
@@ -42,41 +42,31 @@ desired effect
     <!-- Left side column. contains the logo and sidebar -->
 <#--<@base.leftSideBar></@base.leftSideBar>-->
     <!-- Content Wrapper. Contains page content -->
-<@base.model2 activeButton='worldbutton'>
+<@base.model1 activeButton='workbench'>
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                世界
-                <!--<small>Optional description</small>-->
+                Dashboard
+                <small>Version 2.0</small>
             </h1>
-            <!-- <ol class="breadcrumb">
-               <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-               <li class="active">Here</li>
-             </ol>-->
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Dashboard</li>
+            </ol>
         </section>
 
         <!-- Main content -->
         <section class="content container-fluid">
 
-            <!--------------------------
-              | Your Page Content Here |
-              -------------------------->
 
         </section>
         <!-- /.content -->
 
     </div>
     <!-- /.content-wrapper -->
-</@base.model2>
-    <!-- Main Footer -->
-<#--<@base.footer></@base.footer>-->
-    <!-- Control Sidebar -->
-<#--<@base.rightSideBar></@base.rightSideBar>-->
-    <!-- /.control-sidebar -->
-    <!-- Add the sidebar's background. This div must be placed
-    immediately after the control sidebar -->
-<#--<div class="control-sidebar-bg"></div>-->
+</@base.model1>
+
 </div>
 <!-- ./wrapper -->
 

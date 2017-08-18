@@ -26,45 +26,31 @@ public class AdminController {
     private static final Logger LOGGER = Logger.getLogger(AdminController.class);
     @Resource
     private UserService userService;
+
+
+    /**
+     * 工作台
+     * @return
+     */
     @RequestMapping("/admin")
-    public String start(String email, String password, ModelMap map,HttpSession session){
-        WeiUser user = new WeiUser();
-        LOGGER.info(email+"---"+password);
-        user.setPassword(password);
-        user.setEmail(email);
-        //直接访问web
-        if(StringUtils.isEmpty(email) || StringUtils.isEmpty(password)){
-            map.addAttribute("error_message", ErrorMessage.LOGGING_WITH_ERROR_PASSWORD);
-            return "/admin/admin";
-        }
-        if(!userService.isAdmin(user)){
-            map.addAttribute("error_message", ErrorMessage.LOGGING_WITH_ERROR_PASSWORD);
-            return "/admin/login";
-        }
-        //可以通过管理员身份登录
-        user.setState(1);//管理员登陆
-        map.addAttribute("userState",1);
-
-        Enumeration<String> e = session.getAttributeNames();
-        while (e.hasMoreElements()) {
-            String s = e.nextElement();
-            LOGGER.info(s + " == " + session.getAttribute(s));
-        }
-        map.addAttribute("user",user);
-        return "admin/admin";
-    }
-    @GetMapping("/login")
-    public String login(HttpSession session){
-        Enumeration<String> e = session.getAttributeNames();
-        while (e.hasMoreElements()) {
-            String s = e.nextElement();
-            LOGGER.info(s + " == " + session.getAttribute(s));
-        }
-        return "admin/login";
-    }
-    @GetMapping("register")
-    public String register(){
-        return "admin/register";
+    public String workbench(){
+        return "admin/workbench";
     }
 
+    /**
+     * 文件管理
+     * @return
+     */
+    @RequestMapping("filemanager")
+    public String filemanager(){
+        return "admin/filemanager";
+    }
+    /**
+     * 字典管理
+     * @return
+     */
+    @RequestMapping("dictmanager")
+    public String dictmanager(){
+        return "admin/dictmanager";
+    }
 }

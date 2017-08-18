@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wfdest.dao.mapper.SysRolePermissionMapper" >
+  <resultMap id="BaseResultMap" type="com.wfdest.dao.entity.SysRolePermission" >
+    <result column="roleId" property="roleid" jdbcType="BIGINT" />
+    <result column="permissionId" property="permissionid" jdbcType="BIGINT" />
+  </resultMap>
+  <insert id="insert" parameterType="com.wfdest.dao.entity.SysRolePermission" >
+    insert into Sys_Role_Permission (roleId, permissionId)
+    values (#{roleid,jdbcType=BIGINT}, #{permissionid,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wfdest.dao.entity.SysRolePermission" >
+    insert into Sys_Role_Permission
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="roleid != null" >
+        roleId,
+      </if>
+      <if test="permissionid != null" >
+        permissionId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="roleid != null" >
+        #{roleid,jdbcType=BIGINT},
+      </if>
+      <if test="permissionid != null" >
+        #{permissionid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

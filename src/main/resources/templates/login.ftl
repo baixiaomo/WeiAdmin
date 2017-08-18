@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <#import "../base.ftl" as base >
+    <#import "base.ftl" as base >
     <#setting classic_compatible=true><!--空值处理-->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,9 +38,9 @@
     <!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg">${error_message}</p>
-        <form action="${springMacroRequestContext.contextPath}/admin" method="post" style="">
+        <form action="" method="post" style="">
             <div class="form-group has-feedback">
-                <input type="email" class="form-control" name="email" placeholder="Email">
+                <input type="text" class="form-control" name="username" placeholder="Username">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
@@ -64,16 +64,9 @@
         </form>
 
         <div class="social-auth-links text-center">
-            <#--<p>- OR -</p>
-            <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
-                Facebook</a>
-            <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
-                Google+</a>-->
-        </div>
-        <!-- /.social-auth-links -->
 
-        <#--<a href="#">I forgot my password</a><br>
-        <a href="register.html" class="text-center">Register a new membership</a>-->
+        </div>
+
 
     </div>
     <!-- /.login-box-body -->

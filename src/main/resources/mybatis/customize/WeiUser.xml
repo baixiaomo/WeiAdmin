@@ -23,5 +23,10 @@
     from wei_user
     where email = #{email,jdbcType=CHAR} AND password = #{password,jdbcType=CHAR}
   </select>
-
+  <select id="getUserByName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from wei_user
+    where username = #{username,jdbcType=CHAR}
+  </select>
 </mapper>

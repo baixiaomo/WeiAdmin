@@ -9,4 +9,5 @@ import org.springframework.stereotype.Component;
 
 public interface WeiUserDao {
     WeiUser getUserByEmailAndPassword(WeiUser user);
+    WeiUser getUserByName(String name);
 }

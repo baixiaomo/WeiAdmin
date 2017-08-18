@@ -13,9 +13,9 @@
         </commentGenerator>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/myworld?characterEncoding=utf8"
+                        connectionURL="jdbc:mysql://123.207.186.123:3306/wfeiworld?characterEncoding=utf8"
                         userId="root"
-                        password="root"/>
+                        password="wfei_dest1990"/>
 
         <javaModelGenerator targetPackage="com.wfdest.dao.entity"
                             targetProject="F:\workspace\springboot\weiadmin\src\main\java">
@@ -81,5 +81,10 @@
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
         </table>-->
+        <table tableName="User_Info" domainObjectName="UserInfo"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+        </table>
     </context>
 </generatorConfiguration>

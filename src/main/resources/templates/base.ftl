@@ -1,6 +1,3 @@
-<#macro test>
-    test
-</#macro>
 <!--样式表-->
 <#macro styles>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -229,35 +226,35 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">乾坤 <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">无涯</a></li>
-                <li><a href="#">流音</a></li>
-                <li class="dropdown">
+              <#--  <li class="active"><a href="#">世界 <span class="sr-only">(current)</span></a></li>-->
+              <#--  <li><a href="#">无涯</a></li>-->
+               <#-- <li><a href="#">流音</a></li>-->
+               <#-- <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">千古 <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#">千古一</a></li>
-                        <li><a href="#">千古二</a></li>
+                        <li><a href="#">千古二</a></li>-->
                         <!--<li><a href="#">流音</a></li>
                         <li class="divider"></li>
                         <li><a href="#">Separated link</a></li>
                         <li class="divider"></li>
                         <li><a href="#">One more separated link</a></li>-->
-                    </ul>
+                   <#-- </ul>
                 </li>
-                <li><a href="#">子鱼</a></li>
+                <li><a href="#">子鱼</a></li>-->
             </ul>
-            <form class="navbar-form navbar-right" role="search">
+            <#--<form class="navbar-form navbar-right" role="search">
                 <div class="form-group">
                     <input type="text" class="form-control" id="navbar-search-input" placeholder="搜索">
                 </div>
-            </form>
+            </form>-->
         </div>
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                 <!-- Messages: style can be found in dropdown.less   来信-->
                 <li class="dropdown messages-menu">
-                    <!-- Menu toggle button -->
+                    <!--     Menu toggle button -->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-envelope-o"></i>
                         <span class="label label-success">4</span>
@@ -388,7 +385,7 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="${springMacroRequestContext.contextPath}/login" class="btn btn-default btn-flat">登陆</a>
+                                <a href="${springMacroRequestContext.contextPath}/admin" class="btn btn-default btn-flat">登陆</a>
                             </div>
                             <div class="pull-right">
                                 <a href="#" class="btn btn-default btn-flat">退出</a>
@@ -408,7 +405,10 @@
 <!--左导航栏-->
 <#macro leftSideBar activeButton>
 <aside class="main-sidebar">
-
+    <form id="myform">
+        <input type='hidden' name='email' value='${email}'/>
+        <input type='hidden' name='password' value='${password}'/>
+    </form>
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
 
@@ -441,44 +441,46 @@
             <!--<li class="header">HEADER</li>-->
             <!-- Optionally, you can add icons to the links -->
 
-                <li <#if activeButton == 'workbench'>class="active"</#if>><a href="#"><i class="fa fa-tv"></i> <span>工作台</span></a></li>
-                <li class="treeview <#if activeButton?contains('userManager_')>active menu-open</#if>">
-                    <a href="#"><i class="fa fa-user-o"></i><span>用户管理</span>
-                        <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li <#if activeButton =='userManager_user'>class="active"</#if>><a href="#"><i class="fa fa-circle-o"></i>用户</a></li>
-                        <li <#if activeButton =='userManager_group'>class="active"</#if>><a href="#"><i class="fa fa-circle-o"></i>组</a></li>
-                    </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#"><i class="fa fa-calculator"></i><span>数据管理</span>
-                        <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i>数据字典</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i>数据统计</a></li>
-                    </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#"><i class="fa fa-suitcase"></i> <span>模块管理</span>
-                        <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i>世界</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i>无涯</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i>千古</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i>流音</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i>子鱼</a></li>
-                    </ul>
-                </li>
-                <li class="treeview">
+                <li <#if activeButton == 'workbench'>class="active"</#if>><a href="${springMacroRequestContext.contextPath}/workbench"><i class="fa fa-tv"></i> <span>工作台</span></a></li>
+                <li <#if activeButton == 'dictmanager'>class="active"</#if>><a href="${springMacroRequestContext.contextPath}/dictmanager"><i class="fa fa-tv"></i> <span>字典管理</span></a></li>
+                <li <#if activeButton == 'filemanager'>class="active"</#if>><a href="${springMacroRequestContext.contextPath}/filemanager"><i class="fa fa-file"></i> <span>文件管理</span></a></li>
+                <#--<#--&lt;#&ndash;<li class="treeview <#if activeButton?contains('userManager_')>active menu-open</#if>">&ndash;&gt;
+                    &lt;#&ndash;<a href="#"><i class="fa fa-user-o"></i><span>用户管理</span>&ndash;&gt;
+                        &lt;#&ndash;<span class="pull-right-container">&ndash;&gt;
+                    &lt;#&ndash;<i class="fa fa-angle-left pull-right"></i>&ndash;&gt;
+                  &lt;#&ndash;</span>&ndash;&gt;
+                    &lt;#&ndash;</a>&ndash;&gt;
+                    &lt;#&ndash;<ul class="treeview-menu">&ndash;&gt;
+                        &lt;#&ndash;<li <#if activeButton =='userManager_user'>class="active"</#if>><a href="#"><i class="fa fa-circle-o"></i>用户</a></li>&ndash;&gt;
+                        &lt;#&ndash;<li <#if activeButton =='userManager_group'>class="active"</#if>><a href="#"><i class="fa fa-circle-o"></i>组</a></li>&ndash;&gt;
+                    &lt;#&ndash;</ul>&ndash;&gt;
+                &lt;#&ndash;</li>&ndash;&gt;
+                &lt;#&ndash;<li class="treeview">&ndash;&gt;
+                    &lt;#&ndash;<a href="#"><i class="fa fa-calculator"></i><span>数据管理</span>&ndash;&gt;
+                        &lt;#&ndash;<span class="pull-right-container">&ndash;&gt;
+                    &lt;#&ndash;<i class="fa fa-angle-left pull-right"></i>&ndash;&gt;
+                  &lt;#&ndash;</span>&ndash;&gt;
+                    &lt;#&ndash;</a>&ndash;&gt;
+                    &lt;#&ndash;<ul class="treeview-menu">&ndash;&gt;
+                        &lt;#&ndash;<li><a href="#"><i class="fa fa-circle-o"></i>数据字典</a></li>&ndash;&gt;
+                        &lt;#&ndash;<li><a href="#"><i class="fa fa-circle-o"></i>数据统计</a></li>&ndash;&gt;
+                    &lt;#&ndash;</ul>&ndash;&gt;
+                &lt;#&ndash;</li>&ndash;&gt;
+                &lt;#&ndash;<li class="treeview">&ndash;&gt;
+                    &lt;#&ndash;<a href="#"><i class="fa fa-suitcase"></i> <span>模块管理</span>&ndash;&gt;
+                        &lt;#&ndash;<span class="pull-right-container">&ndash;&gt;
+                    &lt;#&ndash;<i class="fa fa-angle-left pull-right"></i>&ndash;&gt;
+                  &lt;#&ndash;</span>&ndash;&gt;
+                    &lt;#&ndash;</a>&ndash;&gt;
+                    &lt;#&ndash;<ul class="treeview-menu">&ndash;&gt;
+                        &lt;#&ndash;<li><a href="#"><i class="fa fa-circle-o"></i>世界</a></li>&ndash;&gt;
+                        &lt;#&ndash;<li><a href="#"><i class="fa fa-circle-o"></i>无涯</a></li>&ndash;&gt;
+                        &lt;#&ndash;<li><a href="#"><i class="fa fa-circle-o"></i>千古</a></li>&ndash;&gt;
+                        &lt;#&ndash;<li><a href="#"><i class="fa fa-circle-o"></i>流音</a></li>&ndash;&gt;
+                        &lt;#&ndash;<li><a href="#"><i class="fa fa-circle-o"></i>子鱼</a></li>&ndash;&gt;
+                    &lt;#&ndash;</ul>&ndash;&gt;
+                &lt;#&ndash;</li>&ndash;&gt;-->-->
+                <#--<li class="treeview">
                     <a href="#"><i class="fa fa-file"></i> <span>文件管理</span>
                         <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
@@ -502,7 +504,7 @@
                         <li><a href="#"><i class="fa fa-circle-o"></i>评论</a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i>留言</a></li>
                     </ul>
-                </li>
+                </li>-->
 
             <#--<li><a href="#"><i class="fa fa-gg"></i> <span>世界</span></a></li>
             <li><a href="#"><i class="fa fa-gg"></i> <span>无涯</span></a></li>
